@@ -2,8 +2,8 @@
 title: Startseite
 sections:
   - actions:
-      - label: 'Zu [XXX]'
-        url: docs/index.html
+      - label: Direkt zu den Spielen
+        url: spiele/index.html
     component: hero_block.html
     content: Hier geht's um nichttraditionelle Rollenspiele.
     image: ''
