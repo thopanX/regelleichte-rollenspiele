@@ -2,15 +2,13 @@
 title: Startseite
 sections:
   - actions:
-      - label: Get Started
+      - label: 'Zu [XXX]'
         url: docs/index.html
     component: hero_block.html
-    content: >-
-      This section can contain a subtitle or tagline. The recommended length is
-      one to three sentences, but can be changed as you prefer.
-    image: images/5.jpg
+    content: Hier geht's um nichttraditionelle Rollenspiele.
+    image: ''
     section_id: hero
-    title: Hero Section
+    title: Regelleichte Rollenspiele und Erzählspiele
     type: heroblock
   - component: features_block.html
     featureslist:
