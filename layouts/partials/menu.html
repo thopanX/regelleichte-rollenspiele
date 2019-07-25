@@ -1,0 +1,13 @@
+<ul class="{{ .menu_class }}">
+  {{ range $item := .menu }}
+  <li class="menu-item{{ if gt ($item.Children | len) 0 }} has-children{{ end }}{{ if eq $.page.URL $item.URL }} current{{ end }}">
+    <a href="{{ if strings.HasPrefix $item.URL "#" }}{{ $item.URL }}{{ else }}{{ $item.URL | relURL }}{{ end }}">{{ $item.Name }}</a>
+    {{ if gt ($item.Children | len) 0 }}
+      {{ $menu := $item.Children }}
+      {{ $page := $.page }}
+      {{ $include_dict := dict "menu" $menu "menu_class" "submenu" "page" $page }}
+      {{ partial "menu.html" $include_dict }}
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>

@@ -1,0 +1,7 @@
+<ul class="toc-submenu">
+{{ range $child_page := .child_pages }}
+  <li class="toc-item{{ if eq $.page.File.Path $child_page.File.Path }} current{{ end }}">
+    <a href="{{ $child_page.URL }}">{{ $child_page.Title }}</a>
+  </li>
+{{ end }}
+</ul>

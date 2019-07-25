@@ -1,0 +1,37 @@
+{{ define "content" }}
+
+  <header class="page-header bg-gradient outer">
+    {{ if .Params.img_path }}
+    <div class="bg-img" style="background-image: url('{{ .Params.img_path | relURL }}')"></div>
+    {{ end }}
+    <div class="inner-small">
+      <h1 class="page-title">{{ .Params.title }}</h1>
+      {{ if .Params.subtitle }}
+      <p class="page-subtitle">{{ .Params.subtitle }}</p>
+      {{ end }}
+    </div><!-- .inner-small -->
+  </header><!--.page-header -->
+
+  <div class="showcase-block outer">
+    <div class="inner">
+      <div class="block-items">
+        {{ range $item := .Params.items }}
+        <section class="block-item">
+          <div class="block-item-inside">
+            {{ if $item.preview_img }}
+            <a class="block-item-preview" href="{{ $item.url }}">
+              <img class="thumbnail" src="{{ $item.preview_img | relURL }}" alt="{{ $item.title }}" />
+            </a>
+            {{ end }}
+            <h2 class="block-item-title"><a href="{{ $item.url }}">{{ $item.title }}</a></h2>
+            {{ if $item.subtitle }}
+            <p class="block-item-text">{{ $item.subtitle | safeHTML }}</p>
+            {{ end }}
+          </div><!-- .block-item-inside -->
+        </section><!-- .block-item -->
+        {{ end }}
+      </div><!-- .block-items -->
+    </div><!-- .inner-->
+  </div><!-- .showcase-block -->
+
+{{ end }}

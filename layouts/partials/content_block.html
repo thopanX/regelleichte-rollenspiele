@@ -1,0 +1,24 @@
+<section id="{{ .section.section_id }}" class="block text-block outer">
+  <div class="inner">
+    <div class="block-inside">
+      {{ if .section.image }}
+      <div class="block-preview">
+        <img class="thumbnail" src="{{ .section.image | relURL }}" alt="{{ .section.title }}" />
+      </div><!-- .block-preview -->
+      {{ end }}
+      <div class="block-content">
+        <h2 class="block-title">{{ .section.title }}</h2>
+        <div class="block-text">
+          {{ partial "markdownify-block" .section.content }}
+        </div>
+        {{ if .section.actions }}
+        <div class="block-cta">
+          {{ range $action := .section.actions }}
+          <a href="{{ $action.url | relURL }}" class="button">{{ $action.label }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div><!-- .block-content -->
+    </div><!-- .block-inside -->
+  </div><!-- .inner -->
+</section><!-- .text-block -->

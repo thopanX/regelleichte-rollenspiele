@@ -1,0 +1,23 @@
+<section id="{{ .section.section_id }}" class="block cta-block outer">
+  <div class="inner">
+    <div class="block-outside bg-gradient">
+      <div class="block-inside">
+        <div class="block-content">
+          <h2 class="block-title">{{ .section.title }}</h2>
+          {{ if .section.subtitle }}
+          <p class="block-text">
+            {{ .section.subtitle | safeHTML }}
+          </p>
+          {{ end }}
+        </div><!-- .block-content -->
+        {{ if .section.actions }}
+        <div class="block-cta">
+          {{ range $action := .section.actions }}
+          <a href="{{ $action.url | relURL }}" class="button secondary">{{ $action.label }}</a>
+          {{ end }}
+        </div><!-- .block-cta -->
+        {{ end }}
+      </div><!-- .block-inside -->
+    </div><!-- .block-outside -->
+  </div><!-- .inner -->
+</section><!-- .cta-block -->

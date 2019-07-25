@@ -1,0 +1,5 @@
+<div class="block-item-cta">
+  {{ range $action := .actions }}
+  <a href="{{ $action.url | relURL }}">{{ $action.label }} <span class="icon-arrow-right" aria-hidden="true"></span></a>
+  {{ end }}
+</div>

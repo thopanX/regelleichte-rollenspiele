@@ -1,0 +1,22 @@
+<section id="{{ .section.section_id }}" class="block hero-block bg-gradient outer">
+  {{ if .section.image }}
+  <div class="bg-img" style="background-image: url('{{ .section.image | relURL }}')"></div>
+  {{ end }}
+  <div class="inner-small">
+    <div class="block-inside">
+      <div class="block-content">
+        <h2 class="block-title">{{ .section.title }}</h2>
+        <div class="block-text">
+          {{ partial "markdownify-block" .section.content }}
+        </div>
+        {{ if .section.actions }}
+        <div class="block-cta">
+          {{ range $action := .section.actions }}
+          <a href="{{ $action.url | relURL }}" class="button secondary">{{ $action.label }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div><!-- .block-content -->
+    </div><!-- .block-inside -->
+  </div><!-- .inner-medium -->
+</section><!-- .hero-block -->
