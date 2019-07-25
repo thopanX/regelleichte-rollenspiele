@@ -20,10 +20,6 @@ params:
         accent1: '#8e2de2'
         accent2: '#4a00e0'
 menu:
-  main:
-    - identifier: layouts
-      name: Sample Layouts
-      url: '#'
-      weight: 5
+  main: []
 disableKinds:
   - RSS
